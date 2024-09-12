@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.room.data.DataBaseInstance
+import com.example.room.data.tables.Contact
 import com.example.room.ui.theme.ROOMTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +22,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             ROOMTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    DataBaseInstance.getDB(this).dao().saveUpdateContact(Contact(
+                        name = "Sagnik",
+                        email = "mukherjee.sagnik17@gmail.com",
+                        location = "Kolkata",
+                        number = "9876543210"
+                    ))
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ROOMTheme {
-        Greeting("Android")
-    }
-}

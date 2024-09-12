@@ -1,6 +1,5 @@
-package com.example.room.data
+package com.example.room.data.tables
 
-import android.health.connect.datatypes.ExerciseRoute.Location
 import android.provider.ContactsContract.CommonDataKinds.Email
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -13,6 +12,6 @@ data class Contact(
     @ColumnInfo(name = "Name") var name: String,
     var location: String,
     var number: String,
-    var email: Email
+    var email: String
 )
 
