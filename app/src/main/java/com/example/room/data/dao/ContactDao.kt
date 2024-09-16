@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface ContactDao {
 
     @Upsert
-    fun saveUpdateContact(contact: Contact)
+    fun insertContact(contact: Contact)
 
     @Delete
     fun deleteContact(contact: Contact)
