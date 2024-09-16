@@ -22,12 +22,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             ROOMTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    DataBaseInstance.getDB(this).dao().saveUpdateContact(Contact(
-                        name = "Sagnik",
-                        email = "mukherjee.sagnik17@gmail.com",
-                        location = "Kolkata",
-                        number = "9876543210"
-                    ))
+                    val dbObject = DataBaseInstance.getDB(this).dao()
+
                 }
             }
         }
