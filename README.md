@@ -16,4 +16,5 @@ plugins {
 }
 kapt("androidx.room:room-compiler:$room_version")
 ```
+* it's better to migrate to KSP
 
