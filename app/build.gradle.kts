@@ -1,7 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    alias(libs.plugins.compose.compiler)
+
+    kotlin("plugin.serialization") version "2.0.20" // for serialization
     kotlin("kapt") // Kotlin Annotation Processing Tool
+
 }
 
 android {
