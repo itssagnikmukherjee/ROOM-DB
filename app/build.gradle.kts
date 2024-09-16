@@ -60,7 +60,11 @@ dependencies {
 
     //Navigation Dependency
 
-    implementation("androidx.navigation:navigation-compose:2.7.5")
+//    implementation("androidx.navigation:navigation-compose:2.7.5")
+    implementation("androidx.navigation:navigation-compose:2.8.0")
+
+    // serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
 
     // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:$room_version")
