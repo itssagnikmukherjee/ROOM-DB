@@ -6,8 +6,11 @@ import com.example.room.data.dataSource.ContactDatabase
 import com.example.room.data.tables.Contact
 
 object DataBaseInstance{
-    lateinit var db : ContactDatabase
+    var db : ContactDatabase? = null
     fun getDB(context : Context) : ContactDatabase{
-        return Room.databaseBuilder(context,ContactDatabase::class.java,"contacts").allowMainThreadQueries().build()
+        if (db==null){
+            return Room.databaseBuilder(context,ContactDatabase::class.java,"contacts").allowMainThreadQueries().build()
+        }
+        return db!!
     }
 }
