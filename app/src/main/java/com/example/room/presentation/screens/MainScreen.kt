@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,10 +15,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.room.data.dao.ContactDao
+import com.example.room.presentation.navigation.SaveEditScreen
 
 @Composable
 fun MainScreen(dbObject: ContactDao, navController: NavHostController) {
-        Scaffold {innerPadding->
+        Scaffold(
+            modifier = Modifier.fillMaxSize(),
+            floatingActionButton = {
+                FloatingActionButton(onClick = {
+                    navController.navigate(SaveEditScreen)
+                }) {
+                    Text(text = "Add")
+                }
+            }
+        ){innerPadding->
             LazyColumn(
                 modifier = Modifier.fillMaxSize().padding(innerPadding)
             ){
